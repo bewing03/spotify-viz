@@ -18,7 +18,7 @@ var client_secret = process.env.secret;
 
 // var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
-var redirect_uri = `https://spotify-visualization.herokuapp.com/callback`;
+var redirect_uri = 'https://spotify-visualization.herokuapp.com/callback';
 
 /**
  * Generates a random string containing numbers and letters
@@ -258,7 +258,11 @@ app.get('/data', function (req, res) {
                                     name: currItem.track.artists[0].name
                                 });
                             }
-                            tracks[currItem.track.id] = {name: currItem.track.name, valence: extraInfo['audio-features'][i].valence};
+                            var valence = 0.5;
+                            if (extraInfo['audio-features'][i]) {
+                                valence = extraInfo['audio-features'][i].valence;
+                            }
+                            tracks[currItem.track.id] = {name: currItem.track.name, valence: valence};
                         }
 
                         if (iterations < 10 && body.next.cursors !== undefined) {

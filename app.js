@@ -24,7 +24,7 @@ var client_secret = ''; // Your secret
 //     client_secret = contents[1];
 // });
 
-client_id = process.env.secret
+client_id = process.env.public
 client_secret = process.env.secret
 
 

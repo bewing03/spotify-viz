@@ -18,11 +18,14 @@ var queue = require('d3-queue');
 
 var client_id = ''; // Your client id
 var client_secret = ''; // Your secret
-fs.readFile('secret_keys.txt', 'utf8', function (err, contents) {
-    contents = contents.split('\n');
-    client_id = contents[0];
-    client_secret = contents[1];
-});
+// fs.readFile('secret_keys.txt', 'utf8', function (err, contents) {
+//     contents = contents.split('\n');
+//     client_id = contents[0];
+//     client_secret = contents[1];
+// });
+
+client_id = process.env.secret
+client_secret = process.env.secret
 
 
 // var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri

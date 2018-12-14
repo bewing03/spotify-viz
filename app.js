@@ -12,24 +12,13 @@ var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
-var fs = require('fs');
-var queue = require('d3-queue');
 
-
-var client_id = ''; // Your client id
-var client_secret = ''; // Your secret
-// fs.readFile('secret_keys.txt', 'utf8', function (err, contents) {
-//     contents = contents.split('\n');
-//     client_id = contents[0];
-//     client_secret = contents[1];
-// });
-
-client_id = process.env.public
-client_secret = process.env.secret
+var client_id = process.env.public;
+var client_secret = process.env.secret;
 
 // var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
-var redirect_uri = `https://spotify-visualization.herokuapp.com/callback`
+var redirect_uri = 'https://spotify-visualization.herokuapp.com/callback';
 
 /**
  * Generates a random string containing numbers and letters
@@ -45,10 +34,6 @@ var generateRandomString = function (length) {
     }
     return text;
 };
-
-// function sleep(millis) {
-//     return new Promise(resolve => setTimeout(resolve, millis));
-// }
 
 var stateKey = 'spotify_auth_state';
 

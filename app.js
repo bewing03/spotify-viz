@@ -25,7 +25,9 @@ fs.readFile('secret_keys.txt', 'utf8', function (err, contents) {
 });
 
 
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+// var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+
+var redirect_uri = `https://spotify-visualization.herokuapp.com/callback`
 
 /**
  * Generates a random string containing numbers and letters

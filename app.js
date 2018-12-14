@@ -27,7 +27,6 @@ var client_secret = ''; // Your secret
 client_id = process.env.public
 client_secret = process.env.secret
 
-
 // var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
 var redirect_uri = `https://spotify-visualization.herokuapp.com/callback`
@@ -444,5 +443,6 @@ app.get('/refresh_token', function (req, res) {
     });
 });
 
-console.log('Listening on 8888');
+// console.log('Listening on 8888');
 app.listen(process.env.PORT || 8888);
+// app.listen(8888);
